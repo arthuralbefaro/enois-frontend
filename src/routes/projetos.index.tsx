@@ -4,7 +4,7 @@ import { useInfiniteQuery } from "@tanstack/react-query";
 import { Link, createFileRoute } from "@tanstack/react-router";
 
 import { texts } from "@/texts";
-import { FolderKanban, Github, Globe, Plus, Search } from "lucide-react";
+import { FolderKanban, Globe, Plus, Search } from "lucide-react";
 
 import { communityProjectsApi } from "@/lib/api";
 import { requireAuth } from "@/lib/require-auth";
@@ -16,6 +16,7 @@ import { Input } from "@/components/ui/input";
 import { LoadingState } from "@/components/ui/loading-state";
 
 import { AppContainer } from "@/components/app-container";
+import { GithubIcon } from "@/components/icons/github";
 import { ProjectFormDialog } from "@/components/projects/project-form-dialog";
 
 export const Route = createFileRoute("/projetos/")({
@@ -169,7 +170,7 @@ function ProjectsCatalog() {
 
                         {project.repoUrl && (
                           <span className="inline-flex items-center gap-1">
-                            <Github className="h-3.5 w-3.5" />
+                            <GithubIcon className="h-3.5 w-3.5" />
                             {texts.projects.openRepo}
                           </span>
                         )}
